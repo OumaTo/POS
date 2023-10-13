@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<p class="text-success text-center"> <strong>
+        {% if hour < 12 %}GOOD MORNING
+        {% elif hour >= 12 %} GOOD AFTERNOON
+        {% else %}GOOD EVENING
+        {% endif %}</strong>
+</p>
+<h2> WELCOME</h2>
+
+{% include "messages.html" %}
+
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <a class="dashboard-stat bg-primary" href="Customers">
+
+            <span class="number counter">10</span>
+            <span class="name">Customers</span>
+            <span class="bg-icon"><i class="fa fa-users"></i></span>
+        </a>
+        <!-- /.dashboard-stat -->
+    </div>
+    <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <a class="dashboard-stat bg-danger" href="/Products/">
+            <span class="number counter">{{products_total}}</span>
+            <span class="name">Products</span>
+            <span class="bg-icon"><i class="fa fa-database"></i></span>
+        </a>
+        <!-- /.dashboard-stat -->
+    </div>
+    <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <a class="dashboard-stat bg-warning" href="/Orders/">
+            <span class="number counter">1</span>
+            <span class="name">Orders</span>
+            <span class="bg-icon"><i class="fa fa-truck"></i></span>
+        </a>
+        <!-- /.dashboard-stat -->
+    </div>
+    <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <a class="dashboard-stat bg-success" href="/Reports/">
+
+            <span class="number counter">10</span>
+            <span class="name">Reports</span>
+            <span class="bg-icon"><i class="fa fa-line-chart "></i></span>
+        </a>
+        <!-- /.dashboard-stat -->
+    </div>
+    <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+</div>
+
+<div class="row mt-4">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <a class="dashboard-stat bg-light" href="Sales">
+
+            <span class="number counter">10</span>
+            <span class="name">Sales</span>
+            <span class="bg-icon"><i class="fa fa-shopping-basket "></i></span>
+        </a>
+        <!-- /.dashboard-stat -->
+    </div>
+    <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <a class="dashboard-stat bg-info" href="Staff">
+            <span class="number counter">100</span>
+            <span class="name">Staff</span>
+            <span class="bg-icon"><i class="fa fa-user-tie "></i></span>
+        </a>
+        <!-- /.dashboard-stat -->
+    </div>
+    <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <a class="dashboard-stat bg-dark-subtle" href="Financials">
+            <span class="number counter">1</span>
+            <span class="name">Financials</span>
+            <span class="bg-icon"><i class="fa fa-bank"></i></span>
+        </a>
+        <!-- /.dashboard-stat -->
+    </div>
+    <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <a class="dashboard-stat bg-danger-subtle" href="Statistics">
+
+            <span class="number counter">10</span>
+            <span class="name">Statistics</span>
+            <span class="bg-icon"><i class="fa fa-pie-chart "></i></span>
+        </a>
+        <!-- /.dashboard-stat -->
+    </div>
+    <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+    <div class=" mt-4 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <a class="dashboard-stat bg-success-subtle" href="shelf/">
+
+            <span class="number counter">10</span>
+            <span class="name">Shelves</span>
+            <span class="bg-icon"> <i class="fa fa-shop" aria-hidden="true"></i>
+            </span>
+        </a>
+        <!-- /.dashboard-stat -->
+    </div>
+</div>
+
+
+{% endblock content %}

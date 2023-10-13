@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-4 offset-md-4 card shadow p-3 mb-5 bg-body rounded-4">
+    <div class="card-body">
+        <p class="card-text">Are You Sure You Wanna Delete Records For 
+           <strong>{{product.Name}}</strong> 
+        </p>
+<form action="" method="post"  >
+    {% csrf_token %}
+    <a href="/Products/"> <button type="button" class="btn btn-secondary offset-5 ">No</button> </a>
+    <button type="submit" class="btn btn-danger mx-4">Yes</button>
+</form>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,287 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.112.5">
+    <title>Amethyst POS</title>
+
+    <link href=" {% static 'assets/dist/css/bootstrap.min.css' %} "
+      rel="stylesheet">
+    <link href="{% static 'assets/fontawesome/css/all.min.css' %} "
+      rel="stylesheet">
+
+    <style>
+  body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+  }
+
+</style>
+    <link href="{% static 'assets/dashboard.css' %} " rel="stylesheet">
+    <link href="{% static 'assets/checkout.css' %} " rel="stylesheet">
+    <link href="{% static 'assets/extra.css' %} " rel="stylesheet">
+
+  </head>
+  <body>
+
+    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow"
+      data-bs-theme="dark">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white"
+        href="#"> <i class="fas fa-diamond    "></i> AMETHYST LTD POS</a>
+
+      <ul class="navbar-nav flex-row d-md-none">
+        <li class="nav-item text-nowrap">
+          <button class="nav-link px-3 text-white" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarSearch"
+            aria-controls="navbarSearch" aria-expanded="false"
+            aria-label="Toggle search">
+            <a href="#search"> <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+          </button>
+        </li>
+        <li class="nav-item text-nowrap">
+          <button class="nav-link px-3 text-white" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu"
+            aria-controls="sidebarMenu" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa fa-list" aria-hidden="true"></i>
+          </button>
+        </li>
+      </ul>
+
+      <div id="navbarSearch" class="navbar-search w-100 collapse">
+        <input class="form-control w-100 rounded-0 border-0" type="text"
+          placeholder="Search" aria-label="Search">
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div
+          class="sidebar  border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
+          <div class="offcanvas-lg offcanvas-end bg-dark-subtle" tabindex="-1"
+            id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="sidebarMenuLabel"><i
+                  class="fa fa-diamond" aria-hidden="true"></i> AMETHYST LTD</h5>
+              <button type="button" class="btn-close"
+                data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu"
+                aria-label="Close"></button>
+            </div>
+            <div
+              class=" side offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+              <ul class=" nav flex-column">
+                <li class=" nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2 active"
+                    aria-current="page" href="/">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                  </a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa fa-truck" aria-hidden="true"></i>
+                      Orders
+                  </a>
+                  <ul class="dropdown-menu bg-dark-subtle" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class=" nav-link dropdown-item" href="/Orders/"> <i class="fas fa-file-edit fa-xs fa-fw"></i> Manage Oders</a></li>
+                      <li><a class="nav-link dropdown-item" href="/Orders/CreateOrder/"> <i class="fa fa-plus-circle" aria-hidden="true"></i> New Order</a></li>
+                  </ul>
+              </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="ProductsDropdown" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                      Products
+                  </a>
+                  <ul class="dropdown-menu bg-dark-subtle" aria-labelledby="ProductsDropdown">
+                      <li><a class=" nav-link dropdown-item" href="/Products/"> <i class="fas fa-file-edit fa-xs fa-fw"></i> Manage Products</a></li>
+                      <li><a class=" nav-link dropdown-item" href="/Products/Category"> <i class="fa fa-sort"></i> Product Category</a></li>
+                      <li><a class="nav-link dropdown-item" href="/Products/AddProducts/"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Products</a></li>
+                  </ul>
+              </li>
+
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Customers
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="fa fa-bank "></i>
+                    Financials
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="fas fa-file-invoice-dollar fa-xs fa-fw"></i>
+                    Invoice
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="fas fa-user-tie    "></i>
+                    Staff
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    Sales
+                  </a>
+                </li>
+
+
+
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="fa fa-line-chart" aria-hidden="true"></i>
+                    Reports
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="fas fa-puzzle-piece fa-xs fa-fw"></i>
+                    Integrations
+                  </a>
+                </li>
+              </ul>
+
+              <h6
+                class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+                <span>Saved reports</span>
+                <a class="link-secondary" href="#" aria-label="Add a new report">
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                </a>
+              </h6>
+              <ul class="nav flex-column mb-auto">
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="fa fa-file-text" aria-hidden="true"></i>
+                    Current month
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="fa fa-file-text" aria-hidden="true"></i>
+                    Last quarter
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="fa fa-file-text" aria-hidden="true"></i>
+                    Social engagement
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="fa fa-file-text" aria-hidden="true"></i>
+                    Year-end sale
+                  </a>
+                </li>
+              </ul>
+
+              <hr class="my-3">
+
+              <ul class="nav flex-column mb-auto">
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <i class="fa fa-gear" aria-hidden="true"></i>
+                    Settings
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#"
+                    data-bs-toggle="modal" data-bs-target="#signout">
+                    <i class="fas fa-door-closed fa-xs fa-fw"></i>
+                    Sign out
+
+                  </a>
+
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group me-2">
+
+                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+
+              <!-- <button type="button"
+                class="btn btn-sm btn-outline-secondary"> -->
+              <!-- <i class="fa fa-calendar" aria-hidden="true"></i> -->
+              {% comment %} <input type="week" placeholder="This Week"
+                class="btn btn-sm btn-outline-secondary"> {% endcomment %}
+
+              <!-- </button> -->
+            </div>
+          </div>
+
+          <div class="container">
+            <!-- Signout Modal -->
+            <div class="modal fade" id="signout" tabindex="-1"
+              data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+              aria-labelledby="signouttitle" aria-hidden="true">
+              <div
+                class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="signouttitle">Signout</h5>
+                    <button type="button" class="btn-close"
+                      data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Are you Sure You wanna logout ?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-success"
+                      data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-danger">Yes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          {% comment %} <span class="text-center text-info mx-2"> {{time}}
+          </span> {% endcomment %}
+
+          
+          {% block content %}
+
+
+
+          {% endblock content %}
+
+        </main>
+      </div>
+    </div>
+    <script src="{%static 'assets/checkout.js' %} "></script>
+    <script src=" {%static 'assets/printing.js' %} " ></script>
+    <script src="{%static 'assets/dist/js/bootstrap.bundle.min.js' %} "></script>
+  </body>
+</html>
